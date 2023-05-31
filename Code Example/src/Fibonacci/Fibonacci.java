@@ -2,14 +2,12 @@ package Fibonacci;
 
 public class Fibonacci {
     /**
-     * Iterative implementation for nth fibonacci number
-     * Time complexity - O(n)
-     * Space complexity - O(1)
+     * Questo metodo calcola iterativamente l'n-esimo numero di Fibonacci.
      *
-     * @param n
-     * @return
+     * @param n l'n-esimo numero intero di Fibonacci di cui voglio conoscere il valore
+     * @return il valore dell'n-esimo numero di Fibonacci
      */
-    public int fibonacciIterative(int n) {
+    public int Fibonacci_it(int n) {
         if(n <= 1) {
             return n;
         }
@@ -25,33 +23,31 @@ public class Fibonacci {
     }
 
     /**
-     * Recursive implementation for nth fibonacci number
-     * Time complexity - O(n)
-     * Space complexity - O(n)
+     * Questo metodo calcola ricorsivamente l'n-esimo numero di Fibonacci.
      *
-     * @param n
-     * @return
+     * @param n l'n-esimo numero intero di Fibonacci di cui voglio conoscere il valore
+     * @return il valore dell'n-esimo numero di Fibonacci
      */
-    public int fibonacciRecursive(int n) {
+    public int Fibonacci_ric(int n) {
         if(n <= 1) {
             return n;
         }
-        return fibonacciRecursive(n-1) + fibonacciRecursive(n-2);
+        return Fibonacci_ric(n-1) + Fibonacci_ric(n-2);
     }
 
     public static void main(String args[]) {
         Fibonacci fib = new Fibonacci();
 
         System.out.println("Iterative version:");
-        System.out.println(fib.fibonacciIterative(5));
-        System.out.println(fib.fibonacciIterative(10));
-        System.out.println(fib.fibonacciIterative(20));
-        System.out.println(fib.fibonacciIterative(30));
+        System.out.println(fib.Fibonacci_it(5));
+        System.out.println(fib.Fibonacci_it(10));
+        System.out.println(fib.Fibonacci_it(20));
+        System.out.println(fib.Fibonacci_it(30));
 
         System.out.println("Recursive version:");
-        System.out.println(fib.fibonacciRecursive(5));
-        System.out.println(fib.fibonacciRecursive(10));
-        System.out.println(fib.fibonacciRecursive(20));
-        System.out.println(fib.fibonacciRecursive(30));
+        System.out.println(fib.Fibonacci_ric(5));
+        System.out.println(fib.Fibonacci_ric(10));
+        System.out.println(fib.Fibonacci_ric(20));
+        System.out.println(fib.Fibonacci_ric(30));
     }
 }

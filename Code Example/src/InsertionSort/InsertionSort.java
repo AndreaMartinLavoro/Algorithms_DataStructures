@@ -1,6 +1,13 @@
 package InsertionSort;
 
+import static Utils.Utils.print;
+
 public class InsertionSort {
+    /**
+     * Questo metodo effettua l'ordinamento di un vttore di interi.
+     *
+     * @param A il vettore di interi da ordinare
+     */
     public void InsertionSort(int A[])
     {
         for (int j = 2; j < A.length; ++j) {
@@ -19,7 +26,9 @@ public class InsertionSort {
     {
         int A[] = { 12, 11, 13, 5, 6 };
 
+        print(A);
         InsertionSort ob = new InsertionSort();
         ob.InsertionSort(A);
+        print(A);
     }
 }

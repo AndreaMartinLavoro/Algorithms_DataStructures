@@ -31,15 +31,15 @@ public class Main {
         //Fibonacci
         Fibonacci fibonacci = new Fibonacci();
         System.out.println("Iterative version:");
-        System.out.println(fibonacci.fibonacciIterative(5));
-        System.out.println(fibonacci.fibonacciIterative(10));
-        System.out.println(fibonacci.fibonacciIterative(20));
-        System.out.println(fibonacci.fibonacciIterative(30));
+        System.out.println(fibonacci.Fibonacci_it(5));
+        System.out.println(fibonacci.Fibonacci_it(10));
+        System.out.println(fibonacci.Fibonacci_it(20));
+        System.out.println(fibonacci.Fibonacci_it(30));
         System.out.println("Recursive version:");
-        System.out.println(fibonacci.fibonacciRecursive(5));
-        System.out.println(fibonacci.fibonacciRecursive(10));
-        System.out.println(fibonacci.fibonacciRecursive(20));
-        System.out.println(fibonacci.fibonacciRecursive(30));
+        System.out.println(fibonacci.Fibonacci_ric(5));
+        System.out.println(fibonacci.Fibonacci_ric(10));
+        System.out.println(fibonacci.Fibonacci_ric(20));
+        System.out.println(fibonacci.Fibonacci_ric(30));
 
 
         //Quick Sort

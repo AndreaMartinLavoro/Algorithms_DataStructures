@@ -1,7 +1,13 @@
 package Fattoriale;
 
 public class Fattoriale {
-    public int Fattoriale_int(int n){
+    /**
+     * Questo metodo calcola iterativamente il fattoriale del numero passato.
+     *
+     * @param n il numero intero di cui calcolare il fattoriale
+     * @return il fattoriale del numero fornito
+     */
+    public int Fattoriale_it(int n){
         int fattoriale = 1;
         for(int i = 1; i <= n; i++){
             fattoriale = fattoriale * i;
@@ -9,6 +15,12 @@ public class Fattoriale {
         return fattoriale;
     }
 
+    /**
+     * Questo metodo calcola ricorsivamente il fattoriale del numero passato.
+     *
+     * @param n il numero intero di cui calcolare il fattoriale
+     * @return il fattoriale del numero fornito
+     */
     public int Fattoriale_ric(int n){
         if(n==0){
             return 1;
@@ -22,8 +34,8 @@ public class Fattoriale {
         Fattoriale ob = new Fattoriale();
         int val = 10;
 
-        int fattoriale_int = ob.Fattoriale_int(val);
-        System.out.println(fattoriale_int);
+        int fattoriale_it = ob.Fattoriale_it(val);
+        System.out.println(fattoriale_it);
 
         int fattoriale_ric = ob.Fattoriale_ric(val);
         System.out.println(fattoriale_ric);

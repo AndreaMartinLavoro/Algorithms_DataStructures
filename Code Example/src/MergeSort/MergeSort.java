@@ -1,46 +1,52 @@
 package MergeSort;
 
+import static Utils.Utils.print;
+
 public class MergeSort {
-    private void Merge(int arr[], int l, int m, int r)
+    public void Merge(int arr[], int l, int m, int r)
     {
-        // Find sizes of two subarrays to be merged
+        // Trova le dimensioni dei due sottoarray da unire
         int n1 = m - l + 1;
         int n2 = r - m;
 
-        /* Create temp arrays */
+        /* Crea gli array temporanei */
         int L[] = new int [n1];
         int R[] = new int [n2];
 
-        /*Copy data to temp arrays*/
+        /* Copia i dati negli array temporanei */
         for (int i=0; i<n1; ++i)
             L[i] = arr[l + i];
         for (int j=0; j<n2; ++j)
             R[j] = arr[m + 1+ j];
 
 
-        /* Merge the temp arrays */
+        /* Unisce gli array temporanei */
 
-        // Initial indexes of first and second subarrays
+        // Indici iniziali dei primi e secondi sottoarray
         int i = 0, j = 0;
 
-        // Initial index of merged subarray array
+        // Indice iniziale dell'array unito
         int k = l;
         while (i < n1 && j < n2)
         {
             if (L[i] <= R[j])
             {
+                // Se il valore nell'array L è minore o uguale al valore nell'array R
+                // lo inserisce nell'array principale arr e incrementa l'indice di L
                 arr[k] = L[i];
                 i++;
             }
             else
             {
+                // Se il valore nell'array R è minore del valore nell'array L
+                // lo inserisce nell'array principale arr e incrementa l'indice di R
                 arr[k] = R[j];
                 j++;
             }
             k++;
         }
 
-        /* Copy remaining elements of L[] if any */
+        /* Copia gli elementi rimanenti dell'array L se presenti */
         while (i < n1)
         {
             arr[k] = L[i];
@@ -48,7 +54,7 @@ public class MergeSort {
             k++;
         }
 
-        /* Copy remaining elements of R[] if any */
+        /* Copia gli elementi rimanenti dell'array R se presenti */
         while (j < n2)
         {
             arr[k] = R[j];
@@ -61,14 +67,17 @@ public class MergeSort {
     {
         if (p < q)
         {
-            // Find the middle point
+            // Verifica se l'indice di inizio (p) è minore dell'indice di fine (q)
+            // Questo implica che ci sono almeno due elementi da ordinare
+
+            // Trova il punto medio dell'array
             int r = (p+q)/2;
 
-            // Sort first and second halves
+            // Ordina la prima e la seconda metà dell'array ricorsivamente
             MergeSort(A, p, r);
             MergeSort(A , r+1, q);
 
-            // Merge the sorted halves
+            // Fonde (unisce) le due metà dell'array ordinate
             Merge(A, p, r, q);
         }
     }
@@ -77,7 +86,9 @@ public class MergeSort {
     {
         int A[] = {12, 11, 13, 5, 6, 7};
 
+        print(A);
         MergeSort ob = new MergeSort();
         ob.MergeSort(A, 0, A.length-1);
+        print(A);
     }
 }
