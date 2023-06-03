@@ -26,6 +26,7 @@ public class InsertionSort {
     {
         int A[] = { 12, 11, 13, 5, 6 };
 
+        System.out.println("InsertionSort Test");
         print(A);
         InsertionSort ob = new InsertionSort();
         ob.InsertionSort(A);
