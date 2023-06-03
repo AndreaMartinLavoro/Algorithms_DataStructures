@@ -1,10 +1,13 @@
 package InsertionSort;
 
+import SelectionSort.SelectionSort;
+
 import static Utils.Utils.print;
+import static Utils.Utils.randomArray;
 
 public class InsertionSort {
     /**
-     * Questo metodo effettua l'ordinamento di un vttore di interi.
+     * Questo metodo effettua l'ordinamento di un vettore di interi.
      *
      * @param A il vettore di interi da ordinare
      */
@@ -24,12 +27,16 @@ public class InsertionSort {
 
     public static void main(String args[])
     {
-        int A[] = { 12, 11, 13, 5, 6 };
+        int A[];
 
-        System.out.println("InsertionSort Test");
-        print(A);
-        InsertionSort ob = new InsertionSort();
-        ob.InsertionSort(A);
-        print(A);
+        for(int i=1; i<=4; i++) {
+            A = randomArray(10, 1, 100);
+            System.out.print("InsertionSort Test " + i);
+            print(A);
+            InsertionSort ob = new InsertionSort();
+            ob.InsertionSort(A);
+            print(A);
+            System.out.println();
+        }
     }
 }

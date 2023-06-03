@@ -1,9 +1,20 @@
 package MergeSort;
 
+import SelectionSort.SelectionSort;
+
 import static Utils.Utils.print;
+import static Utils.Utils.randomArray;
 
 public class MergeSort {
-    public void Merge(int arr[], int l, int m, int r)
+    /**
+     * Questo metodo unisce due array ordinati (mantendendo lo stato di ordinamento anche nel vettore di output)
+     *
+     * @param A array di interi
+     * @param l indice di inizio del primo sottoarray
+     * @param m indice di fine del primo sottoarray
+     * @param r indice di fine del secondo sottoarray
+     */
+    public void Merge(int A[], int l, int m, int r)
     {
         // Trova le dimensioni dei due sottoarray da unire
         int n1 = m - l + 1;
@@ -15,9 +26,9 @@ public class MergeSort {
 
         /* Copia i dati negli array temporanei */
         for (int i=0; i<n1; ++i)
-            L[i] = arr[l + i];
+            L[i] = A[l + i];
         for (int j=0; j<n2; ++j)
-            R[j] = arr[m + 1+ j];
+            R[j] = A[m + 1+ j];
 
 
         /* Unisce gli array temporanei */
@@ -33,14 +44,14 @@ public class MergeSort {
             {
                 // Se il valore nell'array L è minore o uguale al valore nell'array R
                 // lo inserisce nell'array principale arr e incrementa l'indice di L
-                arr[k] = L[i];
+                A[k] = L[i];
                 i++;
             }
             else
             {
                 // Se il valore nell'array R è minore del valore nell'array L
                 // lo inserisce nell'array principale arr e incrementa l'indice di R
-                arr[k] = R[j];
+                A[k] = R[j];
                 j++;
             }
             k++;
@@ -49,7 +60,7 @@ public class MergeSort {
         /* Copia gli elementi rimanenti dell'array L se presenti */
         while (i < n1)
         {
-            arr[k] = L[i];
+            A[k] = L[i];
             i++;
             k++;
         }
@@ -57,12 +68,19 @@ public class MergeSort {
         /* Copia gli elementi rimanenti dell'array R se presenti */
         while (j < n2)
         {
-            arr[k] = R[j];
+            A[k] = R[j];
             j++;
             k++;
         }
     }
 
+    /**
+     * Questo metodo effettua un ordinemento del vettore di interi dato in input
+     *
+     * @param A il vettore di interi su cui effettuare l'ordinamento
+     * @param p rappresenta l'indice di inizio
+     * @param q rappresenta l'indice di fine
+     */
     public void MergeSort(int A[], int p, int q)
     {
         if (p < q)
@@ -84,11 +102,16 @@ public class MergeSort {
 
     public static void main(String args[])
     {
-        int A[] = {12, 11, 13, 5, 6, 7};
+        int A[];
 
-        print(A);
-        MergeSort ob = new MergeSort();
-        ob.MergeSort(A, 0, A.length-1);
-        print(A);
+        for(int i=1; i<=4; i++) {
+            A = randomArray(10, 1, 100);
+            System.out.print("MergeSort Test " + i);
+            print(A);
+            MergeSort ob = new MergeSort();
+            ob.MergeSort(A, 0, A.length-1);
+            print(A);
+            System.out.println();
+        }
     }
 }

@@ -1,6 +1,7 @@
 package SelectionSort;
 
 import static Utils.Utils.print;
+import static Utils.Utils.randomArray;
 
 public class SelectionSort {
     /**
@@ -60,12 +61,16 @@ public class SelectionSort {
 
     public static void main(String args[])
     {
-        int A[] = {64,25,12,22,11};
+        int A[];
 
-        System.out.println("SelectionSort Test");
-        print(A);
-        SelectionSort ob = new SelectionSort();
-        ob.SelectionSort(A, 0);
-        print(A);
+        for(int i=1; i<=4; i++) {
+            A = randomArray(10, 1, 100);
+            System.out.print("SelectionSort Test " + i);
+            print(A);
+            SelectionSort ob = new SelectionSort();
+            ob.SelectionSort(A, 0);
+            print(A);
+            System.out.println();
+        }
     }
 }

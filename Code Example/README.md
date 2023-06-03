@@ -10,13 +10,13 @@ L'obiettivo di questa area della repository è fornire esempi pratici e funziona
 2. Fibonacci
 3. Insertion Sort
 4. Merge Sort
-5. Selection Sort *
-6. Quick Sort *
-7. Selection *
+5. Select Sort
+6. Quick Sort -
+7. Select -
 8. Heap *
 9. Heap Sort *
 10. Counting Sort *
 11. Radix Sort *
 12. Bucket Sort *
-13. Hash Table *
-14. Binary Search Tree (BST) *
+13. Hash Table (TODO)
+14. Binary Search Tree (BST) (TODO)

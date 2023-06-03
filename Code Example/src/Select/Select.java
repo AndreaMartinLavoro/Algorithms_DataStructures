@@ -1,11 +1,14 @@
-package QuickSort;
+package Select;
 
-import InsertionSort.InsertionSort;
+import QuickSort.QuickSort;
+
+import java.util.Random;
 
 import static Utils.Utils.print;
 import static Utils.Utils.randomArray;
 
-public class QuickSort {
+public class Select {
+
     /**
      * Questa funzione prende l'ultimo elemento come pivot,
      * posiziona l'elemento pivot nella sua posizione corretta
@@ -40,33 +43,46 @@ public class QuickSort {
     }
 
     /**
-     * Questo metodo effettua l'ordinamento di un vettore di interi.
+     * Algoritmo di selezione che trovare l'i-esimo elemento più piccolo in un array
      *
      * @param A array di interi
-     * @param p indice iniziale che specificano il range dell'array su cui eseguire l'ordinamento
-     * @param q indice finale che specificano il range dell'array su cui eseguire l'ordinamento
+     * @param p indice iniziale nell'array
+     * @param q indice finale nell'array
+     * @param i indice dell'elemento desiderato (all'interno dell'intervallo dell'array)
+     *
+     * @return l'i-esimo elemento più piccolo nel sottoarray di interesse
      */
-    public void QuickSort(int A[], int p, int q)
-    {
-        if (p < q)
-        {
+    public int Select_naive(int A[], int p, int q, int i){
+        if(p==q){
+            return A[p];
+        } else {
             int r = Partition(A, p, q);
-            QuickSort(A, p, r-1);
-            QuickSort(A, r+1, q);
+            if(i == r){
+                return A[r];
+            }
+
+            if(i<r){
+                return Select_naive(A, p, r-1, i);
+            } else {
+                return Select_naive(A, r+1, q, i);
+            }
         }
     }
-
-    public static void main(String args[])
+    public static void main(String[] args)
     {
         int A[];
 
         for(int i=1; i<=4; i++) {
             A = randomArray(10, 1, 100);
-            System.out.print("QuickSort Test " + i);
+
+            Random random = new Random();
+            int indice = random.nextInt((A.length-1) - 0 + 1) + 0;
+
+            System.out.print("Select Test " + i);
             print(A);
-            QuickSort ob = new QuickSort();
-            ob.QuickSort(A, 0, A.length-1);
-            print(A);
+            Select ob = new Select();
+            int res = ob.Select_naive(A, 0, A.length-1, indice);
+            System.out.println("Inidice " + indice + " - Result " + res);
             System.out.println();
         }
     }
