@@ -18,8 +18,8 @@ L'obiettivo di questa area della repository è fornire esempi pratici e funziona
 10. Counting Sort
 11. Radix Sort
 12. Bucket Sort
-13. Hash Table (TODO)
-14. Binary Search Tree (BST) (TODO)
+13. Hash Table
+14. Binary Search Tree (BST)
 15. Red-Black Tree
 16. B Tree
 17. Graphs
