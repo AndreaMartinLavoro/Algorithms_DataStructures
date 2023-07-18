@@ -2,26 +2,64 @@ package BinarySearchTree;
 
 public class Test {
     public static void main(String[] args) {
-        BinarySearchTree albero = new BinarySearchTree();
+        BST bst = new BST();
 
-        int A[] = { 5, 20, 30, 15, 2, 10, 12, 18, 40 };
+        // Inserimento di alcuni valori nell'albero
+        bst.Insert(50);
+        bst.Insert(30);
+        bst.Insert(20);
+        bst.Insert(40);
+        bst.Insert(70);
+        bst.Insert(60);
+        bst.Insert(80);
 
-        for(int i=0; i<A.length; i++){
-            albero.Insert(A[i]);
+        // Stampa dell'albero in ordine
+        System.out.println("Inorder traversal:");
+        bst.Inorder();
+
+        // Ricerca di un nodo nell'albero
+        int searchValue = 40;
+        BST.Node searchResult = bst.Search(searchValue);
+        if (searchResult != null) {
+            System.out.println("Il nodo con valore " + searchValue + " è stato trovato.");
+        } else {
+            System.out.println("Il nodo con valore " + searchValue + " non è stato trovato.");
         }
 
-        System.out.println(albero.Min_Ric().getValue());
-        System.out.println(albero.Max_Ric().getValue());
+        // Calcolo del successore di un nodo
+        int successorValue = 30;
+        BST.Node successor = bst.Successore(bst.Search(successorValue));
+        if (successor != null) {
+            System.out.println("Il successore di " + successorValue + " è " + successor.getValue());
+        } else {
+            System.out.println("Non esiste un successore per il nodo con valore " + successorValue);
+        }
 
-        albero.Preorder();
-        albero.Inorder();
-        albero.Postorder();
+        // Calcolo del predecessore di un nodo
+        int predecessorValue = 60;
+        BST.Node predecessor = bst.Predecessore(bst.Search(predecessorValue));
+        if (predecessor != null) {
+            System.out.println("Il predecessore di " + predecessorValue + " è " + predecessor.getValue());
+        } else {
+            System.out.println("Non esiste un predecessore per il nodo con valore " + predecessorValue);
+        }
 
-        albero.Search_Ric(12);
-        albero.Search_Ric(20);
-        albero.Search_Ric(72);
+        // Stampa dell'albero in ordine
+        System.out.println("Inorder traversal:");
+        bst.Inorder();
 
-        System.out.println("Successore: " + albero.Successore(albero.SearchRic(albero.root, 20)).getValue());
-        System.out.println("Predecessore: " + albero.Predecessore(albero.SearchRic(albero.root, 20)).getValue());
+        // Eliminazione di un nodo dall'albero
+        int deleteValue = 30;
+        BST.Node deleteNode = bst.Search(deleteValue);
+        if (deleteNode != null) {
+            bst.Delete(deleteNode);
+            System.out.println("Il nodo con valore " + deleteValue + " è stato eliminato.");
+        } else {
+            System.out.println("Il nodo con valore " + deleteValue + " non è presente nell'albero.");
+        }
+
+        // Stampa dell'albero in ordine dopo l'eliminazione
+        System.out.println("Inorder traversal dopo l'eliminazione:");
+        bst.Inorder();
     }
 }

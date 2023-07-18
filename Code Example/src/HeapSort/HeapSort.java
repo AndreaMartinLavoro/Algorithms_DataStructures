@@ -1,9 +1,6 @@
 package HeapSort;
 
 public class HeapSort {
-    private MaxHeap BuildHeap(int A[]){
-
-    }
 
     /**
      * Questo metodo effettua lo scambio di due celle del vettore
@@ -19,13 +16,6 @@ public class HeapSort {
         A[h] = aux;
     }
 
-    public void HeapSort(int A[]){
-        BuildHeap(A);
-        for(int i = A.length - 1; i >= 2; i--){
-            Swap(A, 1, i);
-            A.heapsize
-        }
-    }
     public static void main(String[] args) {
 
     }
