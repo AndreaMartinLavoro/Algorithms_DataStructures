@@ -13,7 +13,7 @@ public class InsertionSort {
      */
     public void InsertionSort(int A[])
     {
-        for (int j = 2; j < A.length; ++j) {
+        for (int j = 1; j < A.length; ++j) {
             int key = A[j];
             int i = j - 1;
 
